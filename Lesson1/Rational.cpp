@@ -7,7 +7,15 @@ void Rational::setNumerator(int num)
 
 void Rational::setDenominator(int num)
 {
-	denominator = num;
+	if (num > 0)
+		denominator = num;
+	if (num == 0)
+		denominator = 1;
+	if (num < 0)
+	{
+		denominator = -1 * num;
+		numerator = -1 * numerator;
+	}
 }
 
 int Rational::getNumerator()
@@ -20,9 +28,10 @@ int Rational::getDenominator()
 	return denominator;
 }
 
-Rational::Rational(int num, int denom) : numerator(num), denominator(denom)
+Rational::Rational(int num, int denom) 
 {
-	
+	numerator = num;
+	denominator = denom;
 }
 
 Rational Rational::square()

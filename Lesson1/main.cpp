@@ -6,13 +6,18 @@ using namespace std;
 
 int main()
 {
-	int num1, num2, num3;
+	int num1 = 1, num2 = 1, num3;
 	char junk;
 
-	cout << "part 1.  set/get" << endl;
+	/*cout << "part 1.  set/get" << endl;
 	cout << "enter a rational number:" << endl;
-	cin >> num1 >> junk >> num2;
-	Rational rat1;
+	cin >> num1 >> junk >> num2;*/
+	Rational rat1(2,5);
+
+	rat1.square().print();
+
+	Rational rat5 = rat1.square();
+
 	rat1.setNumerator(num1);
 	rat1.setDenominator(num2);
 	cout << "numerator: " << rat1.getNumerator() << endl;
